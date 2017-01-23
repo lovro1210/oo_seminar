@@ -8,5 +8,6 @@ namespace MySeries.Model
 {
     public class Class1
     {
+        //proba
     }
 }
