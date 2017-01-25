@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySeries.DAL;
+using MySeries.Model.Repositories;
+using MySeries.Model;
 
 namespace MySeries.Desktop
 {
@@ -17,6 +19,10 @@ namespace MySeries.Desktop
         {
             // kreirati konfiguraciju i SessionFactory za NHIbernate
             NHibernateService.OpenSessionFactory();
+        //   NHibernateService.CreateUserAndSaveToDatabase();
+            NHibernateService.ViewAllUsers();
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.Model", "MySeries.Model\MySeries.Model.csproj", "{AEC5D0BD-7E34-4CBD-80F7-2BB51A7E1A74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.Desktop", "MySeries.Desktop\MySeries.Desktop.csproj", "{796CC6A9-678F-43CF-ACF2-E2F6D2E8BC0F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.DAL", "MySeries.DAL\MySeries.DAL.csproj", "{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.Web", "Web\MySeries.Web.csproj", "{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,6 +12,8 @@ namespace MySeries.DAL
     using global::NHibernate;
     using global::NHibernate.Cfg;
     using global::NHibernate.Tool.hbm2ddl;
+    using Model;
+    using Repositories;
 
     public class NHibernateService
     {
@@ -53,7 +55,7 @@ namespace MySeries.DAL
                 ISession Session = _sessionFactory.OpenSession();
                 var dir = System.IO.Directory.GetCurrentDirectory();
 
-                using (var tx = Session.BeginTransaction())
+          /*      using (var tx = Session.BeginTransaction())
                 {
                     new SchemaExport(nhConfig).Execute(useStdOut: true,
                                                                 execute: true,
@@ -62,7 +64,7 @@ namespace MySeries.DAL
                                                                 exportOutput: Console.Out);
                     tx.Commit();
                 }
-
+*/
 
             }
             catch (Exception)
@@ -70,8 +72,39 @@ namespace MySeries.DAL
 
                 throw;
             }
-
+            
             return _sessionFactory;
+        }
+
+     /*   public static void CreateUserAndSaveToDatabase()
+        {
+            var lovro = new User();
+            lovro.name = "Lovro";
+            lovro.surname = "Filipovic";
+
+            using (var session = OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Save(lovro);
+                    transaction.Commit();
+                }
+            }
+        }
+        */
+        public static void ViewAllUsers()
+        {
+            UserRepository userRepository = new UserRepository(NHibernateService.OpenSession());
+
+            
+            List<User> listUsers = userRepository.getUsers();
+
+            Console.WriteLine("\n{0} employees found:", listUsers.Count);
+
+            foreach (var user in listUsers)
+            {
+                Console.WriteLine(user.name);
+            }
         }
         /*
          *    //public IDatabase Database { private get; set; }
