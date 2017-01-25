@@ -51,6 +51,7 @@ namespace MySeries.DAL
 
                 // this is for rebuilding the database
                 ISession Session = _sessionFactory.OpenSession();
+                var dir = System.IO.Directory.GetCurrentDirectory();
 
                 using (var tx = Session.BeginTransaction())
                 {
