@@ -103,7 +103,7 @@ namespace MySeries.DAL
 
             foreach (var user in listUsers)
             {
-                Console.WriteLine(user.name);
+                Console.WriteLine(user.Name);
             }
         }
         /*

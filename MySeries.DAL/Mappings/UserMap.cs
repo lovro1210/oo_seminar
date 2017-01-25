@@ -12,12 +12,12 @@ namespace MySeries.DAL.Mappings
     {
             public UserMap()
             {
-                Id(b => b.id).GeneratedBy.Native();
-                Map(b => b.name);
-                Map(b => b.surname);
-                Map(b => b.sex);
-                Map(b => b.email);
-                Map(b => b.password);
+                Id(b => b.Id).GeneratedBy.Native();
+                Map(b => b.Name);
+                Map(b => b.Surname);
+                Map(b => b.Sex);
+                Map(b => b.Email);
+                Map(b => b.Password);
             }
     }
 }
