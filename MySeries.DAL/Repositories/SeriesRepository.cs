@@ -1,5 +1,4 @@
 ﻿using MySeries.Model;
-using MySeries.Model.Repositories;
 using NHibernate;
 using NHibernate.Linq;
 using System;
@@ -10,24 +9,27 @@ using System.Threading.Tasks;
 
 namespace MySeries.DAL.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class SeriesRepository
     {
         private ISession _currSession = null;
-        public UserRepository(ISession inSession)
+        public SeriesRepository(ISession inSession)
         {
             _currSession = inSession;
         }
 
-        public List<User> getUsers()
+        public List<Series> getAllSeries()
         {
-            List<User> listUsers = _currSession.Query<User>().ToList();
+            List<Series> listSeries = _currSession.Query<Series>().ToList();
 
-            return listUsers;
+            return listSeries;
         }
 
-        public void addUser(User inUser)
+        public Series getSeries(int seriesId)
         {
-            _currSession.Save(inUser);
+            Series series = _currSession.Get<Series>(seriesId);
+
+            return series;
+
         }
     }
 }
