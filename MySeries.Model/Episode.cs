@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MySeries.Model
 {
-    class Episode
+    public class Episode
     {
         private int _id;
         private String _name;
