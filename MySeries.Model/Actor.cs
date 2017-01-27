@@ -12,6 +12,7 @@ namespace MySeries.Model
         private String _name;
         private String _surname;
         private DateTime _birthday;
+        private IList<Series> _series;
 
         public virtual int Id
         {
@@ -28,10 +29,15 @@ namespace MySeries.Model
             get { return _surname; }
             set { _surname = value; }
         }
-        public virtual DateTime birthday 
+        public virtual DateTime Birthday 
         { 
             get { return _birthday;}
             set { _birthday = value; } 
+        }
+        public virtual IList<Series> Series
+        {
+            get { return _series; }
+            set { _series = value; }
         }
     }
 }

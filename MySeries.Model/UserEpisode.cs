@@ -8,19 +8,19 @@ namespace MySeries.Model
 {
     public class UserEpisode
     {
-        private int _userID;
-        private int _episodeID;
+        private User _user;
+        private Episode _episode;
         private Boolean _watched;
         private String _comment;
-        public virtual int UserID
+        public virtual User User
         {
-            get { return _userID; }
-            set { _userID = value; }
+            get { return _user; }
+            set { _user = value; }
         }
-        public virtual int EpisodeID
+        public virtual Episode Episode
         {
-            get { return _episodeID; }
-            set { _episodeID = value; }
+            get { return _episode; }
+            set { _episode = value; }
         }
         public virtual Boolean Watched
         {

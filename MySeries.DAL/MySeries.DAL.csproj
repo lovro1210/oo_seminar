@@ -60,7 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Mappings\ActorMap.cs" />
+    <Compile Include="Mappings\EpisodeMap.cs" />
     <Compile Include="Mappings\SeriesMap.cs" />
+    <Compile Include="Mappings\UserEpisodeMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="NHibernateService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,6 +12,9 @@ namespace MySeries.Model
         private String _name;
         private String _genre;
         private String _summary;
+        private IList<User> _users;
+        private IList<User> _actors;
+        private IList<Episode> _episodes;
 
         public virtual int Id
         {
@@ -32,6 +35,21 @@ namespace MySeries.Model
         {
             get { return _summary; }
             set { _summary = value; }
+        }
+        public virtual IList<User> Users
+        {
+            get { return _users; }
+            set { _users = value; }
+        }
+        public virtual IList<User> Actors
+        {
+            get { return _actors; }
+            set { _actors = value; }
+        }
+        public virtual IList<Episode> Episodes
+        {
+            get { return _episodes; }
+            set { _episodes = value; }
         }
     }
 }

@@ -15,6 +15,7 @@ namespace MySeries.Model
         private int _episodeNumber;
         private Series _series;
         private String _summary;
+        private IList<UserEpisode> _userEpisode;
 
         public virtual int Id
         {
@@ -50,6 +51,11 @@ namespace MySeries.Model
         {
             get { return _summary; }
             set { _summary = value; }
+        }
+        public virtual IList<UserEpisode> UserEpisode
+        {
+            get { return _userEpisode; }
+            set { _userEpisode = value; }
         }
     }
 }

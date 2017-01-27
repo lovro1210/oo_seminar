@@ -14,6 +14,8 @@ namespace MySeries.Model
         private Boolean _sex;
         private String _email;
         private String _password;
+        private IList<Series> _series;
+        private IList<UserEpisode> _userEpisode;
 
         public virtual int Id 
         { 
@@ -44,6 +46,17 @@ namespace MySeries.Model
         {
             get { return _password; }
             set { _password = value; }
+        }
+
+        public virtual IList<Series> Series
+        {
+            get { return _series; }
+            set { _series = value; }
+        }
+        public virtual IList<UserEpisode> UserEpisode
+        {
+            get { return _userEpisode; }
+            set { _userEpisode = value; }
         }
     }
 }

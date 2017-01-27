@@ -18,6 +18,10 @@ namespace MySeries.DAL.Mappings
                 Map(b => b.Sex);
                 Map(b => b.Email);
                 Map(b => b.Password);
+                HasManyToMany(b => b.Series)
+                    .Cascade.All()
+                    .Table("UserSeries");
+                HasMany(b => b.UserEpisode).Cascade.All();
             }
     }
 }

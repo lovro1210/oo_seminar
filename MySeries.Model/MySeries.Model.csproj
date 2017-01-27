@@ -66,7 +66,6 @@
     <Compile Include="Series.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserEpisode.cs" />
-    <Compile Include="UserSeries.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -8,21 +8,17 @@ using MySeries.Model;
 
 namespace MySeries.DAL.Mappings
 {
-    public class SeriesMap : ClassMap<Series>
+    public class ActorMap : ClassMap<Actor>
     {
-        public SeriesMap() 
+        public ActorMap()
         {
             Id(b => b.Id).GeneratedBy.Native();
             Map(b => b.Name);
-            Map(b => b.Genre);
-            Map(b => b.Summary);
-            HasManyToMany(b => b.Users)
-                    .Cascade.All()
-                    .Table("UserSeries");
-            HasManyToMany(b => b.Actors)
+            Map(b => b.Surname);
+            Map(b => b.Birthday);
+            HasManyToMany(b => b.Series)
                     .Cascade.All()
                     .Table("SeriesActor");
-            HasMany(b => b.Episodes).Cascade.All();
         }
 
     }
