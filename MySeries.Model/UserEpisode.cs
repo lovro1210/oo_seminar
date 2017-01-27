@@ -33,5 +33,28 @@ namespace MySeries.Model
             set { _comment = value; }
         }
 
+        public override bool Equals(object obj)
+        {
+            var other = obj as UserEpisode;
+
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            return this.User == other.User &&
+                this.Episode == other.Episode;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hash = GetType().GetHashCode();
+                hash = (hash * 31) ^ User.GetHashCode();
+                hash = (hash * 31) ^ Episode.GetHashCode();
+
+                return hash;
+            }
+        }
+
     }
 }

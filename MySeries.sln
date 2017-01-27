@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.Desktop", "MySerie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.DAL", "MySeries.DAL\MySeries.DAL.csproj", "{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.Web", "Web\MySeries.Web.csproj", "{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySeries.Web", "MySeries.Web\MySeries.Web.csproj", "{1B27F0C2-AFB0-4003-A884-3A0DC1BEB5F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DF310B0-97F0-4A01-A760-F2CFC9A8806D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F26CE828-15C8-4FE2-99B8-76FDF76C2E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B27F0C2-AFB0-4003-A884-3A0DC1BEB5F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B27F0C2-AFB0-4003-A884-3A0DC1BEB5F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B27F0C2-AFB0-4003-A884-3A0DC1BEB5F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B27F0C2-AFB0-4003-A884-3A0DC1BEB5F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
