@@ -14,6 +14,9 @@ namespace MySeries.Web.Controllers
         // GET: Series
         public ActionResult All()
         {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            List<Series> listSeries = seriesRepository.getAllSeries();
+            NHibernateService.ViewAllUsers();
             return View();
         }
 

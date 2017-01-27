@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MySeries.DAL;
+using MySeries.DAL.Repositories;
+using MySeries.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +11,11 @@ namespace MySeries.Web.Controllers
 {
     public class EpisodeController : Controller
     {
-        // GET: Episode
+        // GET: Episodes
         public ActionResult MyEpisodes()
         {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            List<Series> listSeries = seriesRepository.getAllSeries();
             return View();
         }
 
