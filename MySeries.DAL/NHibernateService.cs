@@ -42,9 +42,8 @@ namespace MySeries.DAL
             try
             {
                 var fluentConfig = Fluently.Configure()
-                                    .Database(SQLiteConfiguration.Standard
-                                        .ConnectionString("Data Source=MySeries.db;Version=3")
-                                        .AdoNetBatchSize(100))
+                                    .Database(MySQLConfiguration.Standard
+                                        .ConnectionString("server=localhost;database=test;uid=mysql;"))
                                     .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>());
 
                 var nhConfig = fluentConfig.BuildConfiguration();
@@ -55,7 +54,7 @@ namespace MySeries.DAL
                 ISession Session = _sessionFactory.OpenSession();
                 var dir = System.IO.Directory.GetCurrentDirectory();
 
-         /*     using (var tx = Session.BeginTransaction())
+      /* using (var tx = Session.BeginTransaction())
                 {
                     new SchemaExport(nhConfig).Execute(useStdOut: true,
                                                                 execute: true,
@@ -63,8 +62,8 @@ namespace MySeries.DAL
                                                                 connection: Session.Connection,
                                                                 exportOutput: Console.Out);
                     tx.Commit();
-                }
-                */
+                } */
+               
             }
             catch (Exception)
             {
