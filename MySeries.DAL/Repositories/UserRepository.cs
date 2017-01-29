@@ -18,11 +18,12 @@ namespace MySeries.DAL.Repositories
             _currSession = inSession;
         }
 
-        public List<User> getUsers()
+        public User getUser(User user)
         {
-            List<User> listUsers = _currSession.Query<User>().ToList();
+            User u = _currSession.Query<User>().Where(x => x.Email.ToLower() == user.Email.ToLower() &&
+       x.Password == user.Password).FirstOrDefault();
 
-            return listUsers;
+            return u;
         }
 
         public void addUser(User inUser)

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace MySeries.Model.Repositories
 {
-    interface ISeriesRepository
+    public interface ISeriesRepository
     {
         List<Series> getAllSeries();
         Series getSeries(int seriesId);
+        List<Series> getSubscribedSeries(int userId);
 
     }
 }

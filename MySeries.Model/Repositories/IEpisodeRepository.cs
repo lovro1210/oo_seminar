@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MySeries.Model.Repositories
 {
-    public interface IUserRepository
+    public interface IEpisodeRepository
     {
-        User getUser(User user);
-
-        void addUser(User inUser);
+        List<Episode> getAllEpisodes();
+        Episode getEpisode(int episodeId);
     }
 }

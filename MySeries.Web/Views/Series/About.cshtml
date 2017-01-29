@@ -1,7 +1,71 @@
-﻿
+﻿@model MySeries.Web.Models.SeriesAboutViewModel
+
 @{
     ViewBag.Title = "About";
 }
 
 <h2>About</h2>
 
+<div>
+    <h4>SeriesAboutViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subscribed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subscribed)
+        </dd>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.Episodes)
+        </dd>
+    </dl>
+    <table class="table">
+        @foreach (var item in Model.Episodes)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Season)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EpisodeNumber)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

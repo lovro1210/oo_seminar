@@ -1,4 +1,6 @@
-﻿using MySeries.Model;
+﻿using MySeries.DAL.Repositories;
+using MySeries.Model;
+using MySeries.Model.Repositories;
 using NHibernate;
 using NHibernate.Linq;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MySeries.DAL.Repositories
 {
-    public class SeriesRepository
+    public class SeriesRepository : ISeriesRepository
     {
         private ISession _currSession = null;
         public SeriesRepository(ISession inSession)
@@ -30,6 +32,12 @@ namespace MySeries.DAL.Repositories
 
             return series;
 
+        }
+
+        public List<Series> getSubscribedSeries(int userId)
+        {
+            List<Series> series = _currSession.Query<Series>().Where(p => p.Users.Any(x => x.Id == userId)).ToList();
+            return series;
         }
     }
 }

@@ -15,10 +15,10 @@ namespace MySeries.Web.Models
         public List<SeriesActor> Actors { get; set; }
         public bool Subscribed { get; set; }
 
-        public SeriesAboutViewModel(int id, String name, String Genre, String Summary)
+      /*  public SeriesAboutViewModel(int id, String name, String Genre, String Summary)
         {
 
-        }
+        } */
         
     }
 
@@ -28,5 +28,10 @@ namespace MySeries.Web.Models
 
     public class SeriesEpisode
     {
+        public int Id { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public int Season { get; set; }
+        public int EpisodeNumber { get; set; }
+        public bool Watched { get; set; }
     }
 }

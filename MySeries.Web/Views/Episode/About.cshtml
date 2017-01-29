@@ -1,7 +1,74 @@
-﻿
+﻿@model MySeries.Web.Models.EpisodeViewModel
+
 @{
     ViewBag.Title = "About";
 }
 
 <h2>About</h2>
 
+<div>
+    <h4>EpisodeAboutViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+  <!--      <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+      -->
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Season)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Season)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EpisodeNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EpisodeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Series)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Series)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Watched)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Watched)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -90,7 +90,7 @@ namespace MySeries.DAL
             }
         }
         */
-        public static void ViewAllUsers()
+     /*   public static void ViewAllUsers()
         {
             UserRepository userRepository = new UserRepository(NHibernateService.OpenSession());
 
@@ -103,7 +103,7 @@ namespace MySeries.DAL
             {
                 Console.WriteLine(user.Name);
             }
-        }
+        } */
         /*
          *    //public IDatabase Database { private get; set; }
                 //public NHibernateService(IDatabase database)
