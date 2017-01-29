@@ -18,8 +18,8 @@ namespace MySeries.Desktop
         static void Main()
         {
             // kreirati konfiguraciju i SessionFactory za NHIbernate
-            NHibernateService.OpenSessionFactory();
-        //   NHibernateService.CreateUserAndSaveToDatabase();
+            //NHibernateService.OpenSessionFactory();
+            //NHibernateService.CreateUserAndSaveToDatabase();
             NHibernateService.ViewAllUsers();
 
 

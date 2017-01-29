@@ -39,11 +39,13 @@ namespace MySeries.DAL
 
         public static ISessionFactory OpenSessionFactory()
         {
+            string connectionString = "server=localhost;database=test;uid=mysql;";
             try
             {
                 var fluentConfig = Fluently.Configure()
                                     .Database(MySQLConfiguration.Standard
-                                        .ConnectionString("server=localhost;database=test;uid=mysql;"))
+                                        .ConnectionString(connectionString))
+                                        //.AdoNetBatchSize(100))
                                     .Mappings(mappings => mappings.FluentMappings.AddFromAssemblyOf<UserMap>());
 
                 var nhConfig = fluentConfig.BuildConfiguration();
