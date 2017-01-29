@@ -56,7 +56,7 @@ namespace MySeries.DAL
                 ISession Session = _sessionFactory.OpenSession();
                 var dir = System.IO.Directory.GetCurrentDirectory();
 
-                using (var tx = Session.BeginTransaction())
+      /* using (var tx = Session.BeginTransaction())
                 {
                     new SchemaExport(nhConfig).Execute(useStdOut: true,
                                                                 execute: true,
@@ -64,8 +64,8 @@ namespace MySeries.DAL
                                                                 connection: Session.Connection,
                                                                 exportOutput: Console.Out);
                     tx.Commit();
-                }
-                
+                } */
+               
             }
             catch (Exception)
             {

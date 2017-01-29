@@ -1,112 +1,39 @@
-﻿
+﻿@model IEnumerable<MySeries.Web.Models.SeriesAllViewModel>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All";
 }
 
-<section id="series">
-    <h1>Pretplaćene</h1>
-    <ul class="series-list">
-        <li>
-            <a href="#">
-                <h2 class="title">Game of Thrones</h2>
-                <p></p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2 class="title">Westworld</h2>
-                <p></p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <h2 class="title">Black Sails</h2>
-                <p></p>
-            </a>
-        </li>
+<h2>All</h2>
 
-    </ul>
-</section>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subscribed)
+        </th>
+        <th></th>
+    </tr>
 
-<style>
-    #series {
-        margin: 4%;
-    }
-    #series a:hover {
-        text-decoration: none;
-    }
-        #series h1 {
-            width: 95%;
-            margin: 0.5em auto;
-            line-height: 90%;
-            font-size: 2.5em;
-            color: #666;
-            text-align: center;
-            position: relative;
-        }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subscribed)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-    .series-list {
-        padding: 0 .75em;
-    }
-
-        .series-list li {
-            position: relative;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 4%;
-            min-height: 295px;
-            transition: box-shadow,transform;
-            transition-duration: .2s;
-            transition-timing-function: ease-in-out;
-            transition-delay: .1s;
-        }
-
-            .series-list li:hover {
-                box-shadow: 2px 5px 2px rgba(0, 0, 0, 0.1);
-                transform: scale(1.03, 1.03);
-            }
-
-                .series-list li:hover::after {
-                    opacity: 1;
-                }
-
-            .series-list li a {
-                position: static;
-                display: inline-block;
-                width: 100%;
-                height: auto;
-                padding: 40px 40px;
-            }
-
-                .series-list li a .title {
-                    font-weight: 100;
-                    line-height: 100%;
-                    color: #444;
-                }
-
-                .series-list li a p {
-                    font-size: 18px;
-                    line-height: 150%;
-                    color: #666;
-                    margin-bottom: 0;
-                }
-
-                .title {
-  border-bottom: 5px solid #5677fc;
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  border-bottom-color: rgba(125, 125, 125, 0.32);
-  text-transform: uppercase;
-  padding-left: 0px;
-  text-align: left;
-  display: block;
-  margin-bottom: 1.69492%;
-  padding-bottom: 1.69492%; }
-  .title::after {
-    clear: both;
-    content: "";
-    display: block; }
-</style>
-
+</table>

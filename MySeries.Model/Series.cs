@@ -13,7 +13,7 @@ namespace MySeries.Model
         private String _genre;
         private String _summary;
         private IList<User> _users;
-        private IList<User> _actors;
+        private IList<Actor> _actors;
         private IList<Episode> _episodes;
 
         public virtual int Id
@@ -41,7 +41,7 @@ namespace MySeries.Model
             get { return _users; }
             set { _users = value; }
         }
-        public virtual IList<User> Actors
+        public virtual IList<Actor> Actors
         {
             get { return _actors; }
             set { _actors = value; }

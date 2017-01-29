@@ -1,6 +1,7 @@
 ﻿using MySeries.DAL;
 using MySeries.DAL.Repositories;
 using MySeries.Model;
+using MySeries.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,27 @@ namespace MySeries.Web.Controllers
         {
             SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
             List<Series> listSeries = seriesRepository.getAllSeries();
-            NHibernateService.ViewAllUsers();
-            return View();
+            List<SeriesAllViewModel> listViewModel = new List<SeriesAllViewModel>();
+            foreach (var series in listSeries)
+            {
+                SeriesAllViewModel newSeries = new SeriesAllViewModel();
+                newSeries.Id = series.Id;
+                newSeries.Name = series.Name;
+                newSeries.Subscribed = series.Users.Any(x => x.Id == 1);
+                listViewModel.Add(newSeries);
+            }
+            return View(listViewModel);
         }
 
         public ActionResult About(int seriesId)
         {
             SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
             Series series = seriesRepository.getSeries(seriesId);
+
+
+    //        SeriesAboutViewModel serAbout = new SeriesAboutViewModel(series.Id, );
+
+
 
 
             return View();
