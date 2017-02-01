@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="bbd12873-8077-4a66-8014-7caffee64501"
+  name="NHibernate"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="7262e1ac-bd4d-440f-b254-a96def36d620"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DNHibernate"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="31141d4c-f0f5-4e06-9528-ade9a80aeb2a"
+        name="ISession"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="37f6e0e5-1115-4722-a8a2-82e32184d7fc"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2Fpackages%2FNHibernate.4.1.0.4000%2Flib%2Fnet40%2FNHibernate.dll Namespace%3DNHibernate Type%3DISession"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="099b78ce-8852-40e4-9639-a2ee8463c5af"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2cd259c8-d525-4252-b443-ee7666998a6f">
+                <propertyInstance
+                  Id="fa0e3e40-d30b-4ad8-a370-564426f50f22"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="040ececb-5eb0-4d87-b874-b3914b1a9563">
+                <propertyInstance
+                  Id="7e1a82c6-cf46-4485-99e5-3f704c8e68a9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a2156bcf-091a-4d94-88e4-e0c3703e60e8">
+                <propertyInstance
+                  Id="64f25359-1e9e-48e6-9d11-a09741708e81"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4f0574dd-d302-40df-b41b-377a3a238d14">
+                <propertyInstance
+                  Id="1cf8c8db-7f45-44a4-a211-7b8797f3b63c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
