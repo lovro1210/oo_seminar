@@ -12,6 +12,7 @@ namespace MySeries.Model.Repositories
         Series getSeries(int seriesId);
         List<Series> getSubscribedSeries(int userId);               
         IList<Series> getSeriesByActor(int actorId);
+        void updateSubscription(Series series);
 
     }
 }

@@ -9,5 +9,8 @@ namespace MySeries.Model.Repositories
     public interface IActorRepository
     {
         List<Actor> getActors();
+        Actor getActor(int actorId);
     }
+
+   
 }

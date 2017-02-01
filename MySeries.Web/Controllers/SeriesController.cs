@@ -1,6 +1,7 @@
 ﻿using MySeries.DAL;
 using MySeries.DAL.Repositories;
 using MySeries.Model;
+using MySeries.Model.Repositories;
 using MySeries.Web.Models;
 using NHibernate;
 using System;
@@ -17,7 +18,7 @@ namespace MySeries.Web.Controllers
         // GET: Series
         public ActionResult All()
         {
-            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            ISeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
             List<Series> listSeries = seriesRepository.getAllSeries();
             List<SeriesAllViewModel> listViewModel = new List<SeriesAllViewModel>();
             foreach (var series in listSeries)
@@ -38,7 +39,7 @@ namespace MySeries.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult About(int seriesId)
         {
-            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            ISeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
             Series series = seriesRepository.getSeries(seriesId);
             SeriesAboutViewModel serAbout = new SeriesAboutViewModel();
             serAbout.Id = series.Id;

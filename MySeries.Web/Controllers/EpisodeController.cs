@@ -18,7 +18,7 @@ namespace MySeries.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult MyEpisodes()
         {
-            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            ISeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
             List<Series> listSubSeries = seriesRepository.getSubscribedSeries(Int32.Parse(User.Identity.Name));
             List<EpisodeViewModel> myEpisodes = new List<EpisodeViewModel>();
             foreach (var series in listSubSeries)
@@ -50,7 +50,7 @@ namespace MySeries.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult About(int episodeId)
         {
-            EpisodeRepository episodeRepository = new EpisodeRepository(NHibernateService.OpenSession());
+            IEpisodeRepository episodeRepository = new EpisodeRepository(NHibernateService.OpenSession());
             Episode episode = episodeRepository.getEpisode(episodeId);
             EpisodeAboutViewModel epAbout = new EpisodeAboutViewModel();
             epAbout.Id = episode.Id;
