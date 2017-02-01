@@ -20,7 +20,8 @@ namespace MySeries.DAL.Repositories
         }
         public List<Episode> getAllEpisodes()
         {
-            return new List<Episode>();
+            List<Episode> episodeList = _currSession.Query<Episode>().ToList();
+            return episodeList;
         }
         public Episode getEpisode(int episodeId)
         {
