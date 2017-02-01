@@ -1,7 +1,21 @@
-﻿
+﻿@model IEnumerable<MySeries.Web.Models.ActorViewModel>
+
 @{
     ViewBag.Title = "Actors";
 }
 
-<h2>Actors</h2>
 
+<section id="series">
+    <h1>Actors</h1>
+
+    <ul class="series-list">
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="@Url.Action("About", "Actor" , new { actorId = item.Id})">
+                    <h2 class="title1">@Html.DisplayFor(modelItem => item.Name)  @Html.DisplayFor(modelItem => item.Surname)</h2>
+                </a>
+            </li>
+        }
+    </ul>
+</section>

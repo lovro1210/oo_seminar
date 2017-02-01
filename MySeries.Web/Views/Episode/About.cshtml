@@ -1,74 +1,46 @@
-﻿@model MySeries.Web.Models.EpisodeViewModel
+﻿@model MySeries.Web.Models.EpisodeAboutViewModel
 
 @{
     ViewBag.Title = "About";
 }
 
-<h2>About</h2>
+
+
+<h2>@Html.DisplayFor(model => model.Series)</h2>
 
 <div>
-    <h4>EpisodeAboutViewModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-  <!--      <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <h5>Season: @Html.DisplayFor(model => model.Season)</h5>
+    <h5>Episode: @Html.DisplayFor(model => model.EpisodeNumber)</h5>
+    <hr />
+    
+</div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-      -->
-        <dt>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
+<div>
+@using (Html.BeginForm("About", "Episode",
+                                    FormMethod.Post, new { @id = "form2" }))
+{
+    @Html.CheckBoxFor(model => model.Watched, new { @onchange = "checkBoxChanged()", id = "check1" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.TextBoxFor(model => model.Comment, new { @class = "comm" })
+    <input type="submit" class="btn btn-default" value="Submit" />
 
-        <dd>
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Season)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Season)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EpisodeNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EpisodeNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Series)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Series)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Watched)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Watched)
-        </dd>
-
-    </dl>
+}
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back", "MyEpisodes")
 </p>
+
+<script type="text/javascript">
+    function checkBoxChanged() {
+        if (document.getElementById('check1').checked) {
+            $(".comm").show();
+        } else {
+            $(".comm").hide();
+        }
+    }
+
+    $(document).ready(checkBoxChanged());
+</script>

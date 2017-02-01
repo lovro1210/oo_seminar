@@ -26,6 +26,14 @@ namespace MySeries.DAL.Repositories
             return u;
         }
 
+        public User getUserById(int userId)
+        {
+            User user = _currSession.Get<User>(userId);
+
+            return user;
+
+        }
+
         public void addUser(User inUser)
         {
             _currSession.Save(inUser);

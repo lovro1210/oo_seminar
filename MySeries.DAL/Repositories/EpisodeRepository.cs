@@ -1,6 +1,7 @@
 ﻿using MySeries.Model;
 using MySeries.Model.Repositories;
 using NHibernate;
+using NHibernate.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +27,23 @@ namespace MySeries.DAL.Repositories
 
             return episode;
         }
+
+        public void addOrUpdateUserEpisode(UserEpisode userepisode)
+        {
+            _currSession.SaveOrUpdate(userepisode);
+        }
+
+        public void deleteUserEpisode(UserEpisode userEpisode)
+        {
+            _currSession.Delete(userEpisode);
+        }
+
+        public UserEpisode getUserEpisode(Episode ep, User us)
+        {
+            UserEpisode userEpisode = _currSession.Get<UserEpisode>(new UserEpisode() { Episode= ep, User = us });
+            
+            return userEpisode;
+        }
+
     }
 }

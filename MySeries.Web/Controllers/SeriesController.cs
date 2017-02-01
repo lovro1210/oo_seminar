@@ -2,6 +2,7 @@
 using MySeries.DAL.Repositories;
 using MySeries.Model;
 using MySeries.Web.Models;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,12 @@ namespace MySeries.Web.Controllers
             SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
             List<Series> listSeries = seriesRepository.getAllSeries();
             List<SeriesAllViewModel> listViewModel = new List<SeriesAllViewModel>();
-            var y = User.Identity.Name;
             foreach (var series in listSeries)
             {
                 SeriesAllViewModel newSeries = new SeriesAllViewModel();
                 newSeries.Id = series.Id;
                 newSeries.Name = series.Name;
-                
+
                 if (User.Identity.Name != "")
                 {
                     newSeries.Subscribed = series.Users.Any(x => x.Id == Int32.Parse(User.Identity.Name));
@@ -34,7 +34,8 @@ namespace MySeries.Web.Controllers
             }
             return View(listViewModel);
         }
-
+        [HttpGet]
+        [Authorize(Roles = "User")]
         public ActionResult About(int seriesId)
         {
             SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
@@ -48,7 +49,7 @@ namespace MySeries.Web.Controllers
                 serAbout.Subscribed = series.Users.Any(x => x.Id == Int32.Parse(User.Identity.Name));
             }
             var serEps = new List<SeriesEpisode>();
-            foreach(var episode in series.Episodes)
+            foreach (var episode in series.Episodes)
             {
                 var serEp = new SeriesEpisode();
                 serEp.Id = episode.Id;
@@ -62,5 +63,44 @@ namespace MySeries.Web.Controllers
 
             return View(serAbout);
         }
+
+        [HttpPost]
+        [Authorize(Roles = "User")]
+        public ActionResult About(SeriesAboutViewModel seriesAbout)
+        {
+            ISession session = NHibernateService.OpenSession();
+            SeriesRepository seriesRepository = new SeriesRepository(session);
+            Series series = seriesRepository.getSeries(seriesAbout.Id);
+            UserRepository userRepository = new UserRepository(session);
+            User user = userRepository.getUserById(Int32.Parse(User.Identity.Name));
+            try
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    if (seriesAbout.Subscribed)
+                    {
+                        series.Users.Add(user);
+                        seriesRepository.updateSubscription(series);
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        series.Users.Remove(user);
+                        seriesRepository.updateSubscription(series);
+                        transaction.Commit();
+                    }
+                }
+            }
+
+
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+
+            return RedirectToAction("About", new { seriesId = seriesAbout.Id });
+        }
     }
 }
+

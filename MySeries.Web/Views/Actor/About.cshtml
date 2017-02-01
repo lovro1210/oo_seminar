@@ -1,7 +1,26 @@
-﻿
+﻿@model MySeries.Web.Models.ActorAboutViewModel
+
 @{
     ViewBag.Title = "About";
 }
 
-<h2>About</h2>
+<h2>@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.Surname)</h2>
 
+<div>
+    <hr />
+    <table class="table">
+        @foreach (var item in Model.Series)
+            {
+            <tr>                
+                    <td>
+                        <a href="@Url.Action("About", "Series" , new { seriesId = item.Id})">@Html.DisplayFor(modelItem => item.Name)</a>
+</td>
+               
+</tr>
+        }
+
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back", "Actors")
+</p>

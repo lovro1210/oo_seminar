@@ -19,8 +19,10 @@ namespace MySeries.DAL.Mappings
             Map(b => b.EpisodeNumber);
             References(b => b.Series);
             Map(b => b.Summary);
-            HasMany(b => b.UserEpisode).Cascade.All();
+            HasMany(b => b.UserEpisode)
+                .Cascade.All();
         }
+          
 
     }
 }

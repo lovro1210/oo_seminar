@@ -13,8 +13,8 @@ namespace MySeries.DAL.Mappings
         public UserEpisodeMap()
         {
             CompositeId()
-                .KeyReference(b => b.User)
-                .KeyReference(b => b.Episode);
+                        .KeyReference(b => b.User)
+                        .KeyReference(b => b.Episode);  
             Map(b => b.Watched);
             Map(b => b.Comment);
         }

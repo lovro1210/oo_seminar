@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -24,11 +25,15 @@ namespace MySeries.Web.Models
 
     public class SeriesActor
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
     }
 
     public class SeriesEpisode
     {
         public int Id { get; set; }
+        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public int Season { get; set; }
         public int EpisodeNumber { get; set; }

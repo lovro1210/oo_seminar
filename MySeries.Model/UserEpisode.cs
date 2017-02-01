@@ -8,20 +8,21 @@ namespace MySeries.Model
 {
     public class UserEpisode
     {
+        private int _id;
         private User _user;
         private Episode _episode;
         private Boolean _watched;
         private String _comment;
         public virtual User User
-        {
-            get { return _user; }
-            set { _user = value; }
-        }
-        public virtual Episode Episode
-        {
-            get { return _episode; }
-            set { _episode = value; }
-        }
+            {
+                get { return _user; }
+                set { _user = value; }
+            }
+            public virtual Episode Episode
+            {
+                get { return _episode; }
+                set { _episode = value; }
+            } 
         public virtual Boolean Watched
         {
             get { return _watched; }
@@ -33,7 +34,7 @@ namespace MySeries.Model
             set { _comment = value; }
         }
 
-        public override bool Equals(object obj)
+       public override bool Equals(object obj)
         {
             var other = obj as UserEpisode;
 
@@ -54,7 +55,7 @@ namespace MySeries.Model
 
                 return hash;
             }
-        }
+        } 
 
     }
 }

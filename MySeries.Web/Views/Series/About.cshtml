@@ -4,57 +4,27 @@
     ViewBag.Title = "About";
 }
 
-<h2>About</h2>
-
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <div>
-    <h4>SeriesAboutViewModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    @using (Html.BeginForm("About", "Series",
+            FormMethod.Post, new { @id = "form1" }))
+    {
+        @Html.CheckBoxFor(model => model.Subscribed, new { onchange = "$('#form1').submit(); " }) 
+        @Html.HiddenFor(model=> model.Id)
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Summary)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Summary)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Subscribed)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Subscribed)
-        </dd>
-
-        <dd>
-            @Html.DisplayNameFor(model => model.Episodes)
-        </dd>
-    </dl>
+    <p>@Html.DisplayNameFor(model => model.Summary): @Html.DisplayFor(model => model.Summary)</p>
+            
     <table class="table">
         @foreach (var item in Model.Episodes)
             {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Season)
+                    S @Html.DisplayFor(modelItem => item.Season) E @Html.DisplayFor(modelItem => item.EpisodeNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.EpisodeNumber)
+                    @Html.DisplayFor(modelItem => item.ReleaseDate)
                 </td>
 
             </tr>
@@ -66,6 +36,12 @@
 
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back", "All")
 </p>
+
+<script type="text/javascript">
+
+    $(".check").click(function () {
+        $("#form1").submit();
+    });
+</script>

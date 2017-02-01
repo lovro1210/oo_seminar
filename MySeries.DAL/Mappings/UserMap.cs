@@ -20,7 +20,8 @@ namespace MySeries.DAL.Mappings
                 Map(b => b.Password);
                 HasManyToMany(b => b.Series)
                     .Cascade.All()
-                    .Table("UserSeries");
+                    .Table("UserSeries")
+                    .Inverse();
                 HasMany(b => b.UserEpisode).Cascade.All();
             }
     }

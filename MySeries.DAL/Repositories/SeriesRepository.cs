@@ -39,5 +39,16 @@ namespace MySeries.DAL.Repositories
             List<Series> series = _currSession.Query<Series>().Where(p => p.Users.Any(x => x.Id == userId)).ToList();
             return series;
         }
+
+        public void updateSubscription(Series series)
+        {
+                _currSession.SaveOrUpdate(series);
+        }
+
+        public void removeSubscription(Series series)
+        {
+                _currSession.SaveOrUpdate(series);
+        }
+
     }
 }
