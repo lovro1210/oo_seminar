@@ -28,7 +28,7 @@ namespace MySeries.Web.Controllers
 
                 if (User.Identity.Name != "")
                 {
-                    newSeries.Subscribed = series.Users.Any(x => x.Id == Int32.Parse(User.Identity.Name));
+       //             newSeries.Subscribed = series.Users.Any(x => x.Id == Int32.Parse(User.Identity.Name));
                 }
                 listViewModel.Add(newSeries);
             }
