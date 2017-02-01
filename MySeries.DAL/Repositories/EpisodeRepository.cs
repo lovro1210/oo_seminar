@@ -1,6 +1,7 @@
 ﻿using MySeries.Model;
 using MySeries.Model.Repositories;
 using NHibernate;
+using NHibernate.Criterion;
 using NHibernate.Linq;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,14 @@ namespace MySeries.DAL.Repositories
             UserEpisode userEpisode = _currSession.Get<UserEpisode>(new UserEpisode() { Episode= ep, User = us });
             
             return userEpisode;
+        }
+
+        public IList<Episode> EpisodeBySeriesId(int seriesId)
+        {
+            IList<Episode> listEpisodes = _currSession.CreateCriteria<Episode>()
+                                    .Add(Expression.Eq("Series.Id", seriesId))
+                                    .List<Episode>();
+            return listEpisodes;
         }
 
     }

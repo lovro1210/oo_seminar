@@ -8,5 +8,6 @@ namespace MySeries.Model.Repositories
 {
     public interface IActorRepository
     {
+        IList<Actor> getActors();
     }
 }

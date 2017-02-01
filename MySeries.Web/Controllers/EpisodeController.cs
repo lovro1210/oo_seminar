@@ -1,6 +1,7 @@
 ﻿using MySeries.DAL;
 using MySeries.DAL.Repositories;
 using MySeries.Model;
+using MySeries.Model.Repositories;
 using MySeries.Web.Models;
 using NHibernate;
 using System;
@@ -118,6 +119,101 @@ namespace MySeries.Web.Controllers
                 throw;
             }
             return RedirectToAction("About", new { episodeId = episode.Id });
+        }
+
+        [HttpGet]
+        public ActionResult UserSeries(int userId)
+        {
+            // TODO This could be optimized by querying into database for user episodes
+            IEpisodeRepository repo = new EpisodeRepository(NHibernateService.OpenSession());
+            var episodeList = repo.getAllEpisodes();
+
+            IList<Episode> userEpisode = new List<Episode>();
+            foreach (Episode e in episodeList)
+            {
+                IList<UserEpisode> ueList = e.UserEpisode;
+                foreach (UserEpisode ue in ueList)
+                {
+                    if (ue.User?.Id == userId)
+                    {
+                        // Remove circular dependencies
+                        ue.Episode = null;
+                        ue.User.Series = null;
+                        ue.User.UserEpisode = null;
+                        userEpisode.Add(e);
+                    }
+                }
+            }
+
+            foreach (Episode e in userEpisode)
+            {
+                if (e.Series == null) break;
+                // Remove circular dependencies
+                e.Series.Actors = null;
+                e.Series.Episodes = null;
+                e.Series.Users = null;
+            }
+
+            return Json(userEpisode, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult EpisodeDetails(int episodeId)
+        {
+            IEpisodeRepository repo = new EpisodeRepository(NHibernateService.OpenSession());
+            var episode = repo.getEpisode(episodeId);
+
+            if (episode.Series != null)
+            {
+                // Remove circular dependencies
+                Series s = episode.Series;
+                s.Actors = null;
+                s.Episodes = null;
+                s.Users = null;
+            }
+
+            if (episode.UserEpisode != null)
+            {
+                UserEpisode ue = episode.UserEpisode.FirstOrDefault();
+                ue.User = null;
+                ue.Episode = null;
+            }
+
+            return Json(episode, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult EpisodeBySeriesId(int seriesId)
+        {
+            // TODO This could be optimized by querying into database for user episodes
+            IEpisodeRepository repo = new EpisodeRepository(NHibernateService.OpenSession());
+            var episodeList = repo.EpisodeBySeriesId(seriesId);
+
+            foreach (Episode e in episodeList)
+            {
+                if (e.UserEpisode != null)
+                {
+                    foreach (UserEpisode ue in e.UserEpisode)
+                    {
+                        ue.Episode = null;
+
+                        if (ue.User != null)
+                        {
+                            ue.User.Series = null;
+                            ue.User.UserEpisode = null;
+                        }
+                    }
+                }
+
+                if (e.Series != null)
+                {
+                    e.Series.Actors = null;
+                    e.Series.Episodes = null;
+                    e.Series.Users = null;
+                }
+            }
+
+            return Json(episodeList, JsonRequestBehavior.AllowGet);
         }
     }
 }

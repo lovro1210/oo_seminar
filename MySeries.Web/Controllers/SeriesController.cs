@@ -101,6 +101,50 @@ namespace MySeries.Web.Controllers
 
             return RedirectToAction("About", new { seriesId = seriesAbout.Id });
         }
+
+        [HttpGet]
+        public ActionResult AllSeries()
+        {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            IList<Series> listSeries = seriesRepository.getAllSeries();
+
+            foreach (Series s in listSeries)
+            {
+                // Remove circular dependencies
+                s.Actors = null;
+                s.Episodes = null;
+
+                foreach (User u in s.Users)
+                {
+                    u.Series = null;
+                    u.UserEpisode = null;
+                }
+
+            }
+            return Json(listSeries, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult SeriesByActor(int actorId)
+        {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            IList<Series> listSeries = seriesRepository.getSeriesByActor(actorId);
+
+            foreach (Series s in listSeries)
+            {
+                // Remove circular dependencies
+                s.Actors = null;
+                s.Episodes = null;
+
+                foreach (User u in s.Users)
+                {
+                    u.Series = null;
+                    u.UserEpisode = null;
+                }
+            }
+
+            return Json(listSeries, JsonRequestBehavior.AllowGet);
+        }
     }
 }
 

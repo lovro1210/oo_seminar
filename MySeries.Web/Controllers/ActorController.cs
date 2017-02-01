@@ -1,6 +1,7 @@
 ﻿using MySeries.DAL;
 using MySeries.DAL.Repositories;
 using MySeries.Model;
+using MySeries.Model.Repositories;
 using MySeries.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,20 @@ namespace MySeries.Web.Controllers
             actorAbout.Series = actorSeries;
    
             return View(actorAbout);
+        }
+
+        [HttpGet]
+        public ActionResult GetActors()
+        {
+            IActorRepository repo = new ActorRepository(NHibernateService.OpenSession());
+            var actorList = repo.getActors();
+
+            foreach (Actor a in actorList)
+            {
+                a.Series = null;
+            }
+
+            return Json(actorList, JsonRequestBehavior.AllowGet);
         }
     }
 }
