@@ -76,17 +76,23 @@ namespace MySeries.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult About(EpisodeAboutViewModel episode)
         {
+            modifyUserEpisode(episode.Watched, episode.Comment, Int32.Parse(User.Identity.Name), episode.Id);
+            return RedirectToAction("About", new { episodeId = episode.Id });
+        }
+
+        private void modifyUserEpisode(bool watched, string comment, int userId, int episodeId)
+        {
             ISession session = NHibernateService.OpenSession();
             EpisodeRepository episodeRepository = new EpisodeRepository(session);
-            Episode ep = episodeRepository.getEpisode(episode.Id);
+            Episode ep = episodeRepository.getEpisode(episodeId);
             UserRepository userRepository = new UserRepository(session);
-            User user = userRepository.getUserById(Int32.Parse(User.Identity.Name));
-            
+            User user = userRepository.getUserById(userId);
+
             try
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    if (episode.Watched)
+                    if (watched)
                     {
 
                         UserEpisode userEpisode = episodeRepository.getUserEpisode(ep, user);
@@ -96,13 +102,17 @@ namespace MySeries.Web.Controllers
                             userEpisode.Episode = ep;
                             userEpisode.User = user;
                         }
-                        userEpisode.Comment = episode.Comment;
-                        userEpisode.Watched = episode.Watched;
+
+                        if (comment != null) {
+                            userEpisode.Comment = comment;
+                        }
+                        userEpisode.Watched = watched;
                         ep.UserEpisode.Add(userEpisode);
                         user.UserEpisode.Add(userEpisode);
                         episodeRepository.addOrUpdateUserEpisode(userEpisode);
                         transaction.Commit();
-                    } else
+                    }
+                    else
                     {
                         var userEpisode = new UserEpisode();
                         userEpisode.Episode = ep;
@@ -112,13 +122,10 @@ namespace MySeries.Web.Controllers
                     }
                 }
             }
-
-
             catch (Exception ex)
             {
                 throw;
             }
-            return RedirectToAction("About", new { episodeId = episode.Id });
         }
 
         [HttpGet]
@@ -131,24 +138,31 @@ namespace MySeries.Web.Controllers
             IList<Episode> userEpisode = new List<Episode>();
             foreach (Episode e in episodeList)
             {
-                IList<UserEpisode> ueList = e.UserEpisode;
-                foreach (UserEpisode ue in ueList)
+                Series series = e.Series;
+                if (series != null && series.Users != null)
                 {
-                    if (ue.User?.Id == userId)
+                    IList<User> seriesUser = series.Users;
+                    foreach (User u in seriesUser)
                     {
-                        // Remove circular dependencies
-                        ue.Episode = null;
-                        ue.User.Series = null;
-                        ue.User.UserEpisode = null;
-                        userEpisode.Add(e);
+                        if (u.Id == userId)
+                        {
+                            userEpisode.Add(e);
+                        }
                     }
                 }
             }
 
+            // Remove circular dependencies
             foreach (Episode e in userEpisode)
             {
+                foreach (UserEpisode ue in e.UserEpisode)
+                {
+                    ue.Episode = null;
+                    ue.User.Series = null;
+                    ue.User.UserEpisode = null;
+                }
+
                 if (e.Series == null) break;
-                // Remove circular dependencies
                 e.Series.Actors = null;
                 e.Series.Episodes = null;
                 e.Series.Users = null;
@@ -172,7 +186,7 @@ namespace MySeries.Web.Controllers
                 s.Users = null;
             }
 
-            if (episode.UserEpisode != null)
+            if (episode.UserEpisode != null && episode.UserEpisode.Any())
             {
                 UserEpisode ue = episode.UserEpisode.FirstOrDefault();
                 ue.User = null;
@@ -214,6 +228,12 @@ namespace MySeries.Web.Controllers
             }
 
             return Json(episodeList, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public void ModifyUserEpisode(bool watched, string comment, int userId, int episodeId)
+        {
+            modifyUserEpisode(watched, comment, userId, episodeId);
         }
     }
 }
