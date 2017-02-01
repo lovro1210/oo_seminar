@@ -68,16 +68,22 @@ namespace MySeries.Web.Controllers
         [Authorize(Roles = "User")]
         public ActionResult About(SeriesAboutViewModel seriesAbout)
         {
+            modifyUserSubscription(seriesAbout.Subscribed, Int32.Parse(User.Identity.Name), seriesAbout.Id);
+            return RedirectToAction("About", new { seriesId = seriesAbout.Id });
+        }
+
+        private void modifyUserSubscription(bool subscribed, int userId, int seriesId)
+        {
             ISession session = NHibernateService.OpenSession();
             SeriesRepository seriesRepository = new SeriesRepository(session);
-            Series series = seriesRepository.getSeries(seriesAbout.Id);
+            Series series = seriesRepository.getSeries(seriesId);
             UserRepository userRepository = new UserRepository(session);
-            User user = userRepository.getUserById(Int32.Parse(User.Identity.Name));
+            User user = userRepository.getUserById(userId);
             try
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    if (seriesAbout.Subscribed)
+                    if (subscribed)
                     {
                         series.Users.Add(user);
                         seriesRepository.updateSubscription(series);
@@ -91,15 +97,62 @@ namespace MySeries.Web.Controllers
                     }
                 }
             }
-
-
             catch (Exception ex)
             {
                 throw;
             }
+        }
 
+        
 
-            return RedirectToAction("About", new { seriesId = seriesAbout.Id });
+        [HttpGet]
+        public ActionResult AllSeries()
+        {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            IList<Series> listSeries = seriesRepository.getAllSeries();
+
+            foreach (Series s in listSeries)
+            {
+                // Remove circular dependencies
+                s.Actors = null;
+                s.Episodes = null;
+
+                foreach (User u in s.Users)
+                {
+                    u.Series = null;
+                    u.UserEpisode = null;
+                }
+
+            }
+            return Json(listSeries, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public ActionResult SeriesByActor(int actorId)
+        {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            IList<Series> listSeries = seriesRepository.getSeriesByActor(actorId);
+
+            foreach (Series s in listSeries)
+            {
+                // Remove circular dependencies
+                s.Actors = null;
+                s.Episodes = null;
+
+                foreach (User u in s.Users)
+                {
+                    u.Series = null;
+                    u.UserEpisode = null;
+                }
+            }
+
+            return Json(listSeries, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public void ModifySubscription(bool subscribed, int userId, int seriesId)
+        {
+            modifyUserSubscription(subscribed, userId, seriesId);
         }
     }
 }

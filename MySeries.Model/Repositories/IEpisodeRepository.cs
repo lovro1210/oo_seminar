@@ -10,5 +10,6 @@ namespace MySeries.Model.Repositories
     {
         List<Episode> getAllEpisodes();
         Episode getEpisode(int episodeId);
+        IList<Episode> EpisodeBySeriesId(int seriesId);
     }
 }
