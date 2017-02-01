@@ -16,8 +16,6 @@ namespace MySeries.Web.Controllers
         [HttpPost]
         public ActionResult LoginUser(string email, string password)
         {
-            email = "admin@myseries.com";
-            password = "a";
             IUserRepository repo = new UserRepository(NHibernateService.OpenSession());
             User user = new User();
             user.Email = email;
