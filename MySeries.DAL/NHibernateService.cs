@@ -39,7 +39,7 @@ namespace MySeries.DAL
 
         public static ISessionFactory OpenSessionFactory()
         {
-            string connectionString = "server=localhost;database=test;uid=mysql;";
+            string connectionString = "server=localhost;database=my-series;uid=admin;";
             try
             {
                 var fluentConfig = Fluently.Configure()
