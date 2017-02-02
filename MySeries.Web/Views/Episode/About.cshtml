@@ -18,16 +18,18 @@
 </div>
 
 <div>
-@using (Html.BeginForm("About", "Episode",
-                                    FormMethod.Post, new { @id = "form2" }))
-{
-    @Html.CheckBoxFor(model => model.Watched, new { @onchange = "checkBoxChanged()", id = "check1" })
-    @Html.HiddenFor(model => model.Id)
-    @Html.TextBoxFor(model => model.Comment, new { @class = "comm" })
-    <input type="submit" class="btn btn-default" value="Submit" />
+    @using (Html.BeginForm("About", "Episode",
+    FormMethod.Post, new { @id = "form2" }))
+    {
+        <label class="checkbox-inline">
+            @Html.CheckBoxFor(model => model.Watched, new { @onchange = "checkBoxChanged()", id = "check1" }) Watched
+        </label>
+            @Html.HiddenFor(model => model.Id)
+            @Html.TextAreaFor(model => model.Comment, new { @class = "form-control", row = "3" })
+            <input type="submit" class="btn btn-default" value="Submit" />
 
 
-}
+            }
 </div>
 <p>
     @Html.ActionLink("Back", "MyEpisodes")
@@ -36,9 +38,9 @@
 <script type="text/javascript">
     function checkBoxChanged() {
         if (document.getElementById('check1').checked) {
-            $(".comm").show();
+            $(".form-control").show();
         } else {
-            $(".comm").hide();
+            $(".form-control").hide();
         }
     }
 

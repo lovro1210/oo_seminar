@@ -193,3 +193,8 @@ textarea {
             content: "";
             display: block;
         }
+
+        .tablica {
+            width :49%;
+            float: left;
+        }

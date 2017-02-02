@@ -29,7 +29,7 @@ namespace MySeries.Web.Controllers
 
                 if (User.Identity.Name != "")
                 {
-       //             newSeries.Subscribed = series.Users.Any(x => x.Id == Int32.Parse(User.Identity.Name));
+                    newSeries.Subscribed = series.Users.Any(x => x.Id == Int32.Parse(User.Identity.Name));
                 }
                 listViewModel.Add(newSeries);
             }
@@ -61,6 +61,16 @@ namespace MySeries.Web.Controllers
                 serEps.Add(serEp);
             }
             serAbout.Episodes = serEps;
+            var serActors = new List<SeriesActor>();
+            foreach (var actor in series.Actors)
+            {
+                var serAct = new SeriesActor();
+                serAct.Id = actor.Id;
+                serAct.Name = actor.Name;
+                serAct.Surname = actor.Surname;
+                serActors.Add(serAct);
+            }
+            serAbout.Actors = serActors;
 
             return View(serAbout);
         }
