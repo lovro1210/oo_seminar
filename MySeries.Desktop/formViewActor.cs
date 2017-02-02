@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySeries.BaseLib;
 
 namespace MySeries.Desktop
 {
-    public partial class Form1 : Form
+    public partial class formViewActor : Form, IShowActorView
     {
-        public Form1()
+        public formViewActor()
         {
             InitializeComponent();
         }
