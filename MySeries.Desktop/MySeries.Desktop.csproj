@@ -125,6 +125,12 @@
     <EmbeddedResource Include="formMainWindow.resx">
       <DependentUpon>formMainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formViewActor.resx">
+      <DependentUpon>formViewActor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formViewAllActors.resx">
+      <DependentUpon>formViewAllActors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formViewAllSeries.resx">
       <DependentUpon>formViewAllSeries.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +152,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
