@@ -26,7 +26,7 @@ namespace MySeries.Desktop
             richTextBox1.Text = episode.Summary;
             _userEpisode = _episodeController.GetUserEpisode(Common.user, episode);
             richTextBox2.Text = _userEpisode.Comment;
-            
+            checkBox1.Checked = _userEpisode.Watched;
         }
 
         private void button1_Click(object sender, EventArgs e)

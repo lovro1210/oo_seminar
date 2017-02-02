@@ -59,21 +59,36 @@ namespace MySeries.Controllers
         }
         public UserEpisode GetUserEpisode(User user, Episode episode)
         {
-            EpisodeRepository episodeRepositroy = new EpisodeRepository(NHibernateService.OpenSession());
-            UserEpisode userEpisode = episodeRepositroy.getUserEpisode(episode, user);
-            if (userEpisode == null)
+            ISession session = NHibernateService.OpenSession();
+            EpisodeRepository episodeRepositroy = new EpisodeRepository(session);
+            UserEpisode dataUserEpisode = episodeRepositroy.getUserEpisode(episode, user);
+            /*if (dataUserEpisode == null)
             {
-                userEpisode = new UserEpisode();
-                userEpisode.User = user;
-                userEpisode.Episode = episode;
-                episodeRepositroy.addOrUpdateUserEpisode(userEpisode);
-            }
-            return userEpisode;
+                dataUserEpisode = new UserEpisode();
+                dataUserEpisode.Episode = episode;
+                dataUserEpisode.User = user;
+                var transaction = session.BeginTransaction();
+                episodeRepositroy.addOrUpdateUserEpisode(dataUserEpisode);
+                transaction.Commit();
+            }*/
+            return dataUserEpisode;
         }
         public void UpdateUserEpisode(UserEpisode userEpisode)
         {
-            EpisodeRepository episodeRepositroy = new EpisodeRepository(NHibernateService.OpenSession());
+            ISession session = NHibernateService.OpenSession();
+            EpisodeRepository episodeRepositroy = new EpisodeRepository(session);
+            // Dohvati userepisode po userid i episodeid
+            // promijeni vrijednost na userepisode.watched
+            // spremi
+            UserEpisode dataUserEpisode = episodeRepositroy.getUserEpisode(userEpisode.Episode, userEpisode.User);
+            //DODAJ USER EPISOD AKO NULL
+
+            dataUserEpisode.Watched = userEpisode.Watched;
+            userEpisode.Episode.UserEpisode.Add(userEpisode);
+            userEpisode.User.UserEpisode.Add(userEpisode);
+            var transaction = session.BeginTransaction();
             episodeRepositroy.addOrUpdateUserEpisode(userEpisode);
+            transaction.Commit();
         }
         public void EpisodeWatched(int id, bool watched)
         {

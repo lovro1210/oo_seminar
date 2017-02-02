@@ -7,6 +7,7 @@ using MySeries.BaseLib;
 using MySeries.DAL.Repositories;
 using MySeries.DAL;
 using MySeries.Model;
+using NHibernate;
 
 namespace MySeries.Controllers
 {
@@ -26,6 +27,43 @@ namespace MySeries.Controllers
             newFrm.ShowAllSeries(listSubSeries, listNoSubSeries);
         }
 
+        public Series GetSeriesById(int id)
+        {
+            SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
+            Series series = seriesRepository.getSeries(id);
+            return series;
+        }
+
+        public void UpdateSeriesSub(int id, bool isChecked)
+        {
+            ISession session = NHibernateService.OpenSession();
+            SeriesRepository seriesRepository = new SeriesRepository(session);
+            Series series = seriesRepository.getSeries(id);
+            UserRepository userRepositroy = new UserRepository(session);
+            User user = userRepositroy.getUser(Common.user);
+            try
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    if (isChecked)
+                    {
+                        series.Users.Add(user);
+                        seriesRepository.updateSubscription(series);
+                        transaction.Commit();
+                    }
+                    else
+                    {
+                        series.Users.Remove(user);
+                        seriesRepository.updateSubscription(series);
+                        transaction.Commit();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
         public void AddOrRemoveSeriesSub(int id, bool isChecked)
         {
             SeriesRepository seriesRepository = new SeriesRepository(NHibernateService.OpenSession());
