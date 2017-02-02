@@ -65,7 +65,7 @@
             name="getActors"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -139,6 +139,104 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="a9803c6a-3202-43cb-bcb1-faf90e8609f5"
+            name="getActor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="7b7ff6ec-3423-4243-b700-6d153dd371c8"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIActorRepository Member%3D(Name%3DgetActor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ee5622f7-839c-4b4b-a1bf-ef0dc4d72799"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e591c02c-afe5-49fc-b5f7-756ed8ab4537">
+                    <propertyInstance
+                      Id="6876b08c-5589-400b-82ba-84e4ce5bac53"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="163d5863-e1c2-472a-9a78-a7c53c97168c">
+                    <propertyInstance
+                      Id="dbb823c8-9719-493d-8c05-2652c403c0ba"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11c4c8b5-519e-4ffc-a7c0-066b9a0857d0">
+                    <propertyInstance
+                      Id="09ecff22-63bf-4d0a-a00b-93eea2de14d7"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5920c9d0-7baa-41ea-9ded-5844afdd6aab">
+                    <propertyInstance
+                      Id="f6e6c011-a50a-45cd-8d44-ca5fdfd7ffde"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ce76359-df7b-49ad-b3a3-fb917202e245">
+                    <propertyInstance
+                      Id="666cc5b9-7569-4bba-b66c-bfcb14504c3b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5039352a-e3e3-4e69-97de-ad5ac50438c3">
+                    <propertyInstance
+                      Id="ee3a6f3a-874f-48f5-9649-ffb0c9354867"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c7f3305f-488c-45f0-bdc7-4248d5f68b4a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="e1284d40-fcf0-437a-89c1-856808c4eb54"
+                      LastKnownName="Actor"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8ceedea4-99dd-4077-a546-21eaabc4bfcf"
+                  name="actorId"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b54dde78-6f6a-4031-ab8d-4aae8b49db7d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIActorRepository Member%3D(Name%3DgetActor OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DactorId"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="ModelingProject.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -196,7 +294,7 @@
             name="getAllSeries"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -275,7 +373,7 @@
             name="getSeries"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -373,7 +471,7 @@
             name="getSubscribedSeries"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -471,7 +569,7 @@
             name="getSeriesByActor"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -564,6 +662,92 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="907e1939-4f2c-4438-b85c-5dcdd5f63611"
+            name="updateSubscription"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="afdbfee0-1c43-4ca5-b6c9-fe2c8427fc9a"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DISeriesRepository Member%3D(Name%3DupdateSubscription OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DSeries)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="418bbe32-2d50-49e1-b53b-b46cd8c0f988"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f0f9b9a6-d179-4791-856f-79647501ab5a">
+                    <propertyInstance
+                      Id="93460eee-3f59-4089-813c-b00bbb4ffc4f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="08e6c4f0-c910-42be-99e3-396501a04cca">
+                    <propertyInstance
+                      Id="adb1ce60-c3bc-404e-8b9e-194348b1cf7b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4472213e-e082-4ab0-9a4c-df1d26d90a9e">
+                    <propertyInstance
+                      Id="61f05b67-640d-41f6-be43-7bd17d1bbb26"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e66c8306-6651-4f30-9520-6b5c9532b37b">
+                    <propertyInstance
+                      Id="3207be02-9137-4a34-bc1b-677ecc2d373c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dde3f721-0274-4e92-be8b-eb956f59bd87">
+                    <propertyInstance
+                      Id="103b99c5-957a-4ae9-829e-1e90b8f7b6d0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18197443-da68-4865-a68f-ebb9c085d3f4">
+                    <propertyInstance
+                      Id="1d7890c0-b108-401e-b76f-fe35e8875b92"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6eaf601f-f7e6-4065-967e-776be3003846"
+                  name="series"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="514d742b-1fa9-42a5-9a73-d217bce7ed62"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DISeriesRepository Member%3D(Name%3DupdateSubscription OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DSeries)]) ParameterIdentifier%3Dseries"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="82d389b1-b6a7-49e7-ac73-0c07418b2a92"
+                      LastKnownName="Series"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -621,7 +805,7 @@
             name="getAllEpisodes"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -700,7 +884,7 @@
             name="getEpisode"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -798,7 +982,7 @@
             name="EpisodeBySeriesId"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -891,6 +1075,295 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="d28fba77-11ab-4653-af3c-153a1fa2e761"
+            name="addOrUpdateUserEpisode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bde39e0a-83c6-46de-9934-33e574489d10"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DaddOrUpdateUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUserEpisode)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2930b15f-1103-428f-a372-4bbd330de282"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6fdfff23-4e58-496b-83d8-4160b397360c">
+                    <propertyInstance
+                      Id="1471cce1-4bf8-40cd-8ce9-82dc47c71b0d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87753a60-89e1-4c5f-b553-f87e579afb04">
+                    <propertyInstance
+                      Id="1f2145d5-e87a-42a3-bee0-b4b72e498d3f"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ce7cd47-929f-4021-a934-1330920f3b92">
+                    <propertyInstance
+                      Id="6de10bb7-02ef-4796-a046-b5bed1445978"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cc5f5a5-6b0b-46c9-a8bf-7b8ad4ea0873">
+                    <propertyInstance
+                      Id="8050af83-ad0b-4b61-b79e-32d74e244e09"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb7726f3-100e-40ca-9e5f-e1843981bb1d">
+                    <propertyInstance
+                      Id="41c58c0f-57fb-43e1-82e5-b40d6ea65483"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f07478e-5476-47b5-9507-3f060d9dc323">
+                    <propertyInstance
+                      Id="c534aa5d-14e2-45c9-b6b8-4a77eaa38e8d"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ff94f9dc-b9f6-4027-a785-3a01bbc4a06f"
+                  name="userepisode"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d39ebdfd-ad1d-4f63-989f-4499c4e29e4b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DaddOrUpdateUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUserEpisode)]) ParameterIdentifier%3Duserepisode"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="dc0c775a-81a7-4421-92c9-ccd4157bad72"
+                      LastKnownName="UserEpisode"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dd9323a8-1729-4c3d-8f82-15a8559976f5"
+            name="deleteUserEpisode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="176e3472-2c03-4b46-b4c8-9cd84b0dd4c1"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DdeleteUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUserEpisode)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8fa09226-c9a0-403e-8b0a-486419e7c7df"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8eb0ec5a-951a-422c-8a22-b382d57e3619">
+                    <propertyInstance
+                      Id="a8d2030a-1c82-4e74-9942-9ee084258c75"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e8c016ae-3483-40e6-9e44-f810b8234f7d">
+                    <propertyInstance
+                      Id="71ddf116-cba9-418f-8bad-57fa94c2656a"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="749622cf-2037-4d4a-b6e0-9947844a97b3">
+                    <propertyInstance
+                      Id="ce45e693-2ad8-40a2-9fb2-a78a115a65e6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43b37a7a-6687-4cca-adc1-7d8aa1403de4">
+                    <propertyInstance
+                      Id="aa01beb1-b869-4bef-8a8d-72f218259607"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3d614e2-8ee5-413f-9945-d7521e178f85">
+                    <propertyInstance
+                      Id="b1f91771-37c8-4270-8daf-38f71b9544ab"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ab346441-e37c-4739-87d1-ee352b5afcf0">
+                    <propertyInstance
+                      Id="c367c701-cf58-4077-ac1d-ece31577f257"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="18dae8e3-63ff-4e2b-a60d-9c08013467a2"
+                  name="userEpisode"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="0091b683-0aba-4d8d-a6d1-fa94a8b17ac7"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DdeleteUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUserEpisode)]) ParameterIdentifier%3DuserEpisode"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="dc0c775a-81a7-4421-92c9-ccd4157bad72"
+                      LastKnownName="UserEpisode"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="53a8f586-95c0-473f-b0ff-29dc7f11ccf6"
+            name="getUserEpisode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="ed60252d-7a58-4009-a2a4-5430b4426936"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DgetUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DEpisode)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUser)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3f808103-2985-4fcc-a555-e807ef6fa05c"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48024981-78db-4678-ae8c-b4105b9df31e">
+                    <propertyInstance
+                      Id="94bdff21-64d1-42ba-8991-e11c7ce4205c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="09e1e84f-dd75-415d-b4d1-822af721c6d9">
+                    <propertyInstance
+                      Id="7dbade49-a394-4e76-a1e4-64fc5bdedae8"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2cac5fd3-379d-443b-b327-4f188487f1ed">
+                    <propertyInstance
+                      Id="4e5c476b-ca27-485c-84d8-d501e2bccf82"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad95057e-f49d-4384-8393-d3c85fdce7bd">
+                    <propertyInstance
+                      Id="540a45bb-55f1-415e-9dee-054497dd630c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aaab6481-1dc6-448c-8d02-7342480ab79e">
+                    <propertyInstance
+                      Id="ce5bd47d-52bf-486c-b5f0-c52e2cb74a74"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="057c5916-1b24-44fb-abaf-aa57e720313e">
+                    <propertyInstance
+                      Id="6420e556-ab43-4309-bc22-602f6c6e131b"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c645875c-11a1-475d-9882-6844a3422c65"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="dc0c775a-81a7-4421-92c9-ccd4157bad72"
+                      LastKnownName="UserEpisode"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52c553ad-efdd-4ea7-acf4-001232fb7887"
+                  name="ep"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="2b05e45d-9125-4261-9dae-ba93439ccbd9"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DgetUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DEpisode)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUser)]) ParameterIdentifier%3Dep"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="19b8ddf6-3e20-4cb9-959c-945eede3097f"
+                      LastKnownName="Episode"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="792f01ba-cb09-47ca-8310-ef82cce71769"
+                  name="us"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="f62fea67-2be5-4326-9143-9a300892151d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model.Repositories Type%3DIEpisodeRepository Member%3D(Name%3DgetUserEpisode OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DEpisode)%2C(Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2FMySeries.Model%2Fbin%2FDebug%2FMySeries.Model.dll Namespace%3DMySeries.Model Type%3DUser)]) ParameterIdentifier%3Dus"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="05092510-ff11-4c9c-9f1b-f05762bcc6cf"
+                      LastKnownName="User"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperations>
       </Interface>
     </packageHasNamedElement>
@@ -948,7 +1421,7 @@
             name="addUser"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>
@@ -1034,7 +1507,7 @@
             name="getUser"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <referencesInternal>

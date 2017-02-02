@@ -50,6 +50,12 @@
         LastKnownName="NHibernate"
         LastKnownLocation="Package2_2356.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f98816eb-5ff2-45eb-ad21-dcb641debab8"
+        LastKnownName="FluentNHibernate"
+        LastKnownLocation="Package1_0042.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

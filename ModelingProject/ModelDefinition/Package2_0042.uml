@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="064b78fe-822e-4986-bab8-1d457d0df4ca"
+  name="Mapping"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="feb5ad49-8eb4-41ba-a988-797a0b0665e4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DFluentNHibernate.Mapping"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="3829c665-bdc0-4cce-9140-6b9e2edf1f3c"
+        name="ClassMap&lt;Actor‎&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0cb80963-81ff-4c0b-a93c-6ba1ec9e3005"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f46fe3ca-7f02-4fce-8bd7-3da14290509a">
+                <propertyInstance
+                  Id="91a99906-bce6-4c08-8d1e-606ee70a1277"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a021b9e2-c197-4d6c-97e4-398867b48841">
+                <propertyInstance
+                  Id="566f4e08-a67b-4e81-847c-9486334e9eb6"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b337bac4-0f3b-46eb-a0c8-5ec0202e9994">
+                <propertyInstance
+                  Id="6fabb2d3-5909-49f8-bab1-15ede0ecbd44"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a2088a37-b219-4e75-af28-deea9191665d">
+                <propertyInstance
+                  Id="17292fb2-04e0-4548-9fdc-d5616febab87"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="994b89d8-d56b-429f-a880-6a7607f599f0">
+                <propertyInstance
+                  Id="4919a215-80e1-46af-9ea0-d348c66dd71f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="952d768e-5b49-4a2c-98ed-9cfea4524d84">
+            <redefinableTemplateSignatureMoniker
+              Id="ba8cbca8-b289-4b86-b820-7c8f5497724c"
+              LastKnownLocation="Package2_0042.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="f8ce0e09-bd0c-40b6-889e-55a5e531dc1f">
+                  <actuals>
+                    <classMoniker
+                      Id="e1284d40-fcf0-437a-89c1-856808c4eb54"
+                      LastKnownName="Actor"
+                      LastKnownLocation="Package1_2350.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="2f6311aa-58f3-492c-ad06-0739c179aaf0"
+                      LastKnownLocation="Package2_0042.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="596a1279-df69-4cac-b7f7-e832667482f4"
+        name="ClassMap"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5163d20f-40ce-41df-a7fe-28fbf1cad9df"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2Fpackages%2FFluentNHibernate.2.0.3.0%2Flib%2Fnet40%2FFluentNHibernate.dll Namespace%3DFluentNHibernate.Mapping Type%3D(Name%3DClassMap GenericParameterCount%3D1)"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4b702c7c-5940-474a-845e-08ab67608098"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cb41a5b4-47e4-4121-9662-f18f8b95970d">
+                <propertyInstance
+                  Id="fdad4d50-4196-449f-8c09-0cf4eb2bde8b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ada4a218-99a6-40e3-9838-e1ad33a9c8d0">
+                <propertyInstance
+                  Id="d3bb10d7-94d4-4885-a10c-ddf4621c4512"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3cfcac1d-1ab2-42a2-b9a0-2019043c2f25">
+                <propertyInstance
+                  Id="845f83a7-e1fc-44fd-b5ab-63f33751a849"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f73ab0c-dc98-4c2c-b580-18ec56696178">
+                <propertyInstance
+                  Id="0eb35ffe-de3a-4a11-8b41-e7d693c069dc"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c644d73f-5f74-417a-8be4-24ece87684aa">
+                <propertyInstance
+                  Id="db2129b5-4dab-4d41-8669-796ac3c64cc6"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedRedefinableTemplateSignatureInternal>
+          <redefinableTemplateSignature
+            Id="ba8cbca8-b289-4b86-b820-7c8f5497724c"
+            parameters=""
+            name="RedefinableTemplateSignature1"
+            isLeaf="false">
+            <ownedParameters>
+              <classifierTemplateParameter
+                Id="2f6311aa-58f3-492c-ad06-0739c179aaf0">
+                <referencesInternal>
+                  <reference
+                    Id="ad060cbc-8924-46da-bf73-412fd2ed46c4"
+                    handle="viewcode://./CodeSchema_GenericParameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2Fmatija%2FDocuments%2FGitHub%2FOOBL_seminar%2Fpackages%2FFluentNHibernate.2.0.3.0%2Flib%2Fnet40%2FFluentNHibernate.dll Namespace%3DFluentNHibernate.Mapping Type%3D(Name%3DClassMap GenericParameterCount%3D1) ParameterIdentifier%3D0"
+                    tag="ViewCode" />
+                </referencesInternal>
+                <ownedParameterableElement>
+                  <class
+                    Id="5a54adfc-dc71-414c-a6f1-c8bb3b5e4066"
+                    name="T"
+                    isAbstract="false"
+                    isLeaf="false"
+                    isActiveClass="false" />
+                </ownedParameterableElement>
+              </classifierTemplateParameter>
+            </ownedParameters>
+          </redefinableTemplateSignature>
+        </ownedRedefinableTemplateSignatureInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
