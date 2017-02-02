@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MySeries.Web.Controllers.ActorController">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAEAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ActorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Controllers.EpisodeController">
+    <Position X="5.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAACAAAEAAAAAggAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Controllers\EpisodeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Controllers.SeriesController">
+    <Position X="8.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAEAAAAAAAAAAAAAABAAAIAAAEAIAAA=</HashCode>
+      <FileName>Controllers\SeriesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Controllers.UserController">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Controllers\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.ActorAboutViewModel">
+    <Position X="13.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQABAAIAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\ActorAboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.ActorSeries">
+    <Position X="16" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ActorAboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.ActorViewModel">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ActorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.EpisodeAboutViewModel">
+    <Position X="3.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAEAQAIAAAAAAAAAASAAAAAAAAAAAAAAAAAgAE=</HashCode>
+      <FileName>Models\EpisodeAboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.EpisodeViewModel">
+    <Position X="3" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAIAAAAAAAAAASAAAAAAAAAAAAAAAAAgAE=</HashCode>
+      <FileName>Models\EpisodeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.SeriesAboutViewModel">
+    <Position X="8.25" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAACAAgAAAAAIAAAwAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SeriesAboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.SeriesActor">
+    <Position X="11.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SeriesAboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.SeriesEpisode">
+    <Position X="10.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAIAAAAAAAAAACAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Models\SeriesAboutViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Web.Models.SeriesAllViewModel">
+    <Position X="5.75" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SeriesAllViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

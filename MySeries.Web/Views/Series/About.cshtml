@@ -7,30 +7,57 @@
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 <div>
     <hr />
-    @using (Html.BeginForm("About", "Series",
-            FormMethod.Post, new { @id = "form1" }))
-    {
-        @Html.CheckBoxFor(model => model.Subscribed, new { onchange = "$('#form1').submit(); " }) 
-        @Html.HiddenFor(model=> model.Id)
-    }
+        @using (Html.BeginForm("About", "Series",
+                    FormMethod.Post, new { @id = "form1" }))
+        {
+            <p>@Html.DisplayNameFor(model => model.Summary): @Html.DisplayFor(model => model.Summary)</p>
+             <label class="checkbox-inline">
+                @Html.CheckBoxFor(model => model.Subscribed, new { onchange = "$('#form1').submit(); " }) Subscription
+            </label>
+                @Html.HiddenFor(model => model.Id)
+                }
 
-    <p>@Html.DisplayNameFor(model => model.Summary): @Html.DisplayFor(model => model.Summary)</p>
-            
-    <table class="table">
-        @foreach (var item in Model.Episodes)
-            {
+
+                <table class="table table-hover tablica">
+                    <tr>
+                        <th>Season and Episode</th>
+                        <th>Realease Date</th>
+                    </tr>
+                    @foreach (var item in Model.Episodes)
+                    {
+                        <tr>
+                            <td>
+                                S @Html.DisplayFor(modelItem => item.Season) E @Html.DisplayFor(modelItem => item.EpisodeNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReleaseDate)
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+    <table class="table table-hover tablica">
+        <tr>
+            <th>Name</th>
+        </tr>
+        @foreach (var item in Model.Actors)
+        {
             <tr>
                 <td>
-                    S @Html.DisplayFor(modelItem => item.Season) E @Html.DisplayFor(modelItem => item.EpisodeNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
+                    @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Surname)
                 </td>
 
             </tr>
         }
 
     </table>
+
+
+
+
+
+
 
 
 

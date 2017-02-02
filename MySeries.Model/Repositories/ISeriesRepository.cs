@@ -10,7 +10,9 @@ namespace MySeries.Model.Repositories
     {
         List<Series> getAllSeries();
         Series getSeries(int seriesId);
-        List<Series> getSubscribedSeries(int userId);
+        List<Series> getSubscribedSeries(int userId);               
+        IList<Series> getSeriesByActor(int actorId);
+        void updateSubscription(Series series);
 
     }
 }

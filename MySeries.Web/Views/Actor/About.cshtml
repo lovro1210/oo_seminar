@@ -8,18 +8,19 @@
 
 <div>
     <hr />
-    <table class="table">
-        @foreach (var item in Model.Series)
-            {
-            <tr>                
-                    <td>
-                        <a href="@Url.Action("About", "Series" , new { seriesId = item.Id})">@Html.DisplayFor(modelItem => item.Name)</a>
-</td>
-               
-</tr>
-        }
+    <section id="series">
 
-    </table>
+        <ul class="series-list">
+            @foreach (var item in Model.Series)
+            {
+                <li>
+                    <a href="@Url.Action("About", "Series" , new { seriesId = item.Id})">
+                        <h2 class="title1">@Html.DisplayFor(modelItem => item.Name)</h2>
+                    </a>
+                </li>
+            }
+        </ul>
+    </section>
 </div>
 <p>
     @Html.ActionLink("Back", "Actors")

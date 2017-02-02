@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="bee7dbb0-161b-41e5-ade5-9fd2a7148692"
+  name="DAL"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="038b2c0c-c0ad-45ef-82d7-a75e2c732057"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMySeries.DAL"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="79fb1194-fa9c-4da4-aa1c-be5e7158bc8c"
+        LastKnownName="Repositories"
+        LastKnownLocation="Package1_2356.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="dad4a5bb-be44-4c35-bf5f-ce22a13778db"
+        LastKnownName="Mappings"
+        LastKnownLocation="Package_0042.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

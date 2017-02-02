@@ -10,5 +10,9 @@ namespace MySeries.Model.Repositories
     {
         List<Episode> getAllEpisodes();
         Episode getEpisode(int episodeId);
+        IList<Episode> EpisodeBySeriesId(int seriesId);
+        void addOrUpdateUserEpisode(UserEpisode userepisode);
+        void deleteUserEpisode(UserEpisode userEpisode);
+        UserEpisode getUserEpisode(Episode ep, User us);
     }
 }

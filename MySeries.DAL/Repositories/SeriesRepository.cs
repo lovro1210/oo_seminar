@@ -22,7 +22,6 @@ namespace MySeries.DAL.Repositories
         public List<Series> getAllSeries()
         {
             List<Series> listSeries = _currSession.Query<Series>().ToList();
-
             return listSeries;
         }
 
@@ -48,6 +47,31 @@ namespace MySeries.DAL.Repositories
         public void removeSubscription(Series series)
         {
                 _currSession.SaveOrUpdate(series);
+        }
+
+        public IList<Series> getSeriesByActor(int actorId)
+        {
+            IList<Series> listSeries = _currSession.Query<Series>().ToList();
+            IList<Series> actorSeries = new List<Series>();
+            foreach (Series s in listSeries)
+            {
+                Boolean inSeries = false;
+                foreach (Actor a in s.Actors)
+                {
+                    if (a.Id == actorId)
+                    {
+                        inSeries = true;
+                        break;
+                    }
+                }
+
+                if (inSeries)
+                {
+                    actorSeries.Add(s);
+                }
+            }
+
+            return actorSeries;
         }
 
     }
